@@ -1,6 +1,5 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-    <div>2023黑马程序员小兔鲜商城项目</div>
+  <el-button type="primary">2023黑马程序员小兔鲜商城项目</el-button>
 </template>
