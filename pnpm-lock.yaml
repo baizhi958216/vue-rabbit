@@ -24,6 +24,9 @@ devDependencies:
   eslint-plugin-vue:
     specifier: ^9.11.0
     version: 9.11.0(eslint@8.39.0)
+  sass:
+    specifier: ^1.63.2
+    version: 1.63.2
   unplugin-auto-import:
     specifier: ^0.16.4
     version: 0.16.4
@@ -32,7 +35,7 @@ devDependencies:
     version: 0.25.1(vue@3.3.2)
   vite:
     specifier: ^4.3.5
-    version: 4.3.5
+    version: 4.3.5(sass@1.63.2)
 
 packages:
 
@@ -408,7 +411,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.3.5
+      vite: 4.3.5(sass@1.63.2)
       vue: 3.3.2
     dev: true
 
@@ -1003,6 +1006,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /immutable@4.3.0:
+    resolution: {integrity: sha512-0AOCmOip+xgJwEVTQj1EfiDDOkPmuyllDuTuEX+DDXUgapLAsBIfkg3sxCYyCEA8mQqZrrxPUGjcOQ2JS3WLkg==}
+    dev: true
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -1384,6 +1391,16 @@ packages:
       queue-microtask: 1.2.3
     dev: true
 
+  /sass@1.63.2:
+    resolution: {integrity: sha512-u56TU0AIFqMtauKl/OJ1AeFsXqRHkgO7nCWmHaDwfxDo9GUMSqBA4NEh6GMuh1CYVM7zuROYtZrHzPc2ixK+ww==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.0
+      source-map-js: 1.0.2
+    dev: true
+
   /scule@1.0.0:
     resolution: {integrity: sha512-4AsO/FrViE/iDNEPaAQlb77tf0csuq27EsVpy6ett584EcRTp6pTDLoGWVxCD77y5iU5FauOvhsI4o1APwPoSQ==}
     dev: true
@@ -1562,7 +1579,7 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
-  /vite@4.3.5:
+  /vite@4.3.5(sass@1.63.2):
     resolution: {integrity: sha512-0gEnL9wiRFxgz40o/i/eTBwm+NEbpUeTWhzKrZDSdKm6nplj+z4lKz8ANDgildxHm47Vg8EUia0aicKbawUVVA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1590,6 +1607,7 @@ packages:
       esbuild: 0.17.19
       postcss: 8.4.24
       rollup: 3.24.0
+      sass: 1.63.2
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
