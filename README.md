@@ -16,8 +16,3 @@
 > > > styles: 样式文件夹  
 > > > utils: 工具函数文件夹  
 > > > views: vue 页面文件夹
-
-## 组件库
-
-- ElementPlus
-- sass
