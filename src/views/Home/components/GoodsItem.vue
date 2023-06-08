@@ -15,7 +15,7 @@ defineProps({
   </RouterLink>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .goods-item {
   display: block;
   width: 220px;
