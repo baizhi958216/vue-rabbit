@@ -16,7 +16,7 @@ const categoryStore = useCategoryStore();
           v-for="item in categoryStore.categoryList"
           :key="item.id"
         >
-          <RouterLink to="/">
+          <RouterLink :to="`/category/${item.id}`">
             {{ item.name }}
           </RouterLink>
         </li>
