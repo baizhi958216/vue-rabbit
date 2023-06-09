@@ -31,6 +31,13 @@ const router = createRouter({
       component: Login,
     },
   ],
+  // 路由行为配置
+  scrollBehavior() {
+    return {
+      // 路由切换后页面回到顶部
+      top: 0,
+    };
+  },
 });
 
 export default router;
