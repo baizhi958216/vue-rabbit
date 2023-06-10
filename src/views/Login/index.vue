@@ -35,6 +35,9 @@ const rules = {
     },
   ],
 };
+
+// 3. 获取form做统一校验
+const formRef = ref();
 </script>
 
 <template>
@@ -59,6 +62,7 @@ const rules = {
         <div class="account-box">
           <div class="form">
             <el-form
+              ref="formRef"
               :model="form"
               :rules="rules"
               label-position="right"
