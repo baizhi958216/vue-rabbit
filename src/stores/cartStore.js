@@ -26,12 +26,29 @@ export const useCartStore = defineStore(
       cartList.value.reduce((a, c) => a + c.count * c.price, 0)
     );
 
+    // 单选功能
+    const singleCheck = (skuId, selected) => {
+      const item = cartList.value.find((item) => item.skuId === skuId);
+      item.selected = selected;
+    };
+
+    // 是否全选
+    const isAll = computed(() => cartList.value.every((item) => item.selected));
+
+    // 全选
+    const allCheck = (selected) => {
+      cartList.value.forEach((item) => (item.selected = selected));
+    };
+
     return {
       cartList,
       addCart,
       delCart,
       allCount,
       allPrice,
+      singleCheck,
+      isAll,
+      allCheck,
     };
   },
   {
