@@ -38,6 +38,7 @@ const addCart = () => {
       count: count.value,
       skuId: skuObj.skuId,
       attrsText: skuObj.specsText,
+      price: skuObj.price,
       selected: true,
     });
   } else {
