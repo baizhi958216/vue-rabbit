@@ -24,9 +24,16 @@ const target = ref(null);
 const left = ref(0);
 const top = ref(0);
 
-const { elementX, elementY } = useMouseInElement(target);
+// 大图效果
+const positionX = ref(0);
+const positionY = ref(0);
 
-watch([elementX, elementY], () => {
+const { elementX, elementY, isOutside } = useMouseInElement(target);
+
+watch([elementX, elementY, isOutside], () => {
+  if (isOutside.value) {
+    return;
+  }
   // 横向
   if (elementX.value > 100 && elementY.value < 300) {
     left.value = elementX.value - 100;
@@ -48,6 +55,10 @@ watch([elementX, elementY], () => {
   if (elementY.value < 100) {
     top.value = 0;
   }
+
+  // 控制大图显示
+  positionX.value = -left.value * 2;
+  positionY.value = -top.value * 2;
 });
 </script>
 
@@ -75,12 +86,12 @@ watch([elementX, elementY], () => {
       class="large"
       :style="[
         {
-          backgroundImage: `url(${imageList[0]})`,
-          backgroundPositionX: `0px`,
-          backgroundPositionY: `0px`,
+          backgroundImage: `url(${imageList[activeIndex]})`,
+          backgroundPositionX: `${positionX}px`,
+          backgroundPositionY: `${positionY}px`,
         },
       ]"
-      v-show="false"
+      v-show="!isOutside"
     ></div>
   </div>
 </template>
