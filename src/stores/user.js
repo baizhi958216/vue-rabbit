@@ -9,7 +9,12 @@ export const useUserStore = defineStore(
       const res = await loginAPI({ account, password });
       userInfo.value = res.result;
     };
-    return { userInfo, getUserInfo };
+
+    // 退出清除用户信息
+    const clearUserInfo = () => {
+      userInfo.value = {};
+    };
+    return { userInfo, getUserInfo, clearUserInfo };
   },
   {
     persist: true,
