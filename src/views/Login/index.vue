@@ -21,6 +21,19 @@ const rules = {
       trigger: "blur",
     },
   ],
+  agree: [
+    {
+      // 自定义校验逻辑
+      validator: (rule, value, cb) => {
+        console.log(value);
+        if (value) {
+          cb();
+        } else {
+          cb(new Error("请勾选协议"));
+        }
+      },
+    },
+  ],
 };
 </script>
 
@@ -58,8 +71,8 @@ const rules = {
               <el-form-item label="密码" prop="password">
                 <el-input v-model="form.password" />
               </el-form-item>
-              <el-form-item label-width="22px">
-                <el-checkbox size="large">
+              <el-form-item label-width="22px" prop="agree">
+                <el-checkbox size="large" v-model="form.agree">
                   我已同意隐私条款和服务条款
                 </el-checkbox>
               </el-form-item>
