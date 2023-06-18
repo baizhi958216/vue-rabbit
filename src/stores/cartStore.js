@@ -75,6 +75,11 @@ export const useCartStore = defineStore(
         .reduce((a, c) => a + c.count * c.price, 0)
     );
 
+    // 清除购物车
+    const clearCart = () => {
+      cartList.value = [];
+    };
+
     return {
       cartList,
       addCart,
@@ -86,6 +91,7 @@ export const useCartStore = defineStore(
       allCheck,
       selectedCount,
       selectedPrice,
+      clearCart,
     };
   },
   {
