@@ -13,8 +13,8 @@ const getPayInfo = async () => {
 onMounted(() => getPayInfo())
 
 // 跳转支付
-const baseURL = 'http://127.0.0.1:3000/'
-const backURL = 'http://127.0.0.1:5173/paycallback'
+const baseURL = 'http://localhost:3000/'
+const backURL = 'http://localhost:5173/paycallback'
 const redirectUrl = encodeURIComponent(backURL)
 const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redirectUrl}`
 </script>
